@@ -10,6 +10,16 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false
   },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  avatar: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
 });
 
 sequelize.sync();
+
+module.exports = User;
