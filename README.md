@@ -5,7 +5,7 @@
 1. Clone the project
 
 ```bash
-git clone https://yourproject/repository.git
+git clone https://github.com/alchuu00/auth-assignment.git
 ```
 
 2. Install dependencies
