@@ -1,25 +1,31 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database.js');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../database.js");
 
-const User = sequelize.define('User', {
+const User = sequelize.define("User", {
   name: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
+  },
+  phone: {
+    type: DataTypes.STRING,
+    allowNull: true,
   },
   password: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: false,
   },
   avatar: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: true,
   },
 });
 
-sequelize.sync();
+sequelize.sync({ force: false }).then(() => {
+  console.log("Synced models to DB");
+});
 
 module.exports = User;
